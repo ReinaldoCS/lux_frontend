@@ -35,12 +35,13 @@ export const Logo = styled.div<SidebarProps>`
   div {
     display: ${props => props.isActive ? "flex" : "none"};
     align-items: center;
-    justify-content: center;
-    /* transition: 0.1s ease; */
+    justify-content: flex-start;
 
     opacity: ${props => props.isActive ? "1" : "0"};
     visibility: ${props => props.isActive ? "visible" : "hidden"};
+    width: ${props => props.isActive ? "100%" : "0%"};
 
+    transition: width 0.5s ease;
 
     h1 {
       font-size: 1.5rem;
@@ -58,7 +59,6 @@ export const Logo = styled.div<SidebarProps>`
     justify-content: center;
     height: 2rem;
     width: 2rem;
-    /* transition: 0.5s ease; */
     
     background: none;
     border: none;
@@ -112,13 +112,16 @@ export const PageList = styled.div<SidebarProps>`
         opacity: ${props => props.isActive ? "1" : "0"};
         visibility: ${props => props.isActive ? "visible" : "hidden"};
         display: ${props => props.isActive ? "block" : "none"};
+        width: ${props => props.isActive ? "100%" : "0%"};
+        overflow: hidden;
+
+        transition: width 0.5s ease;
       }
     }
 
     .tooltip {
       position: absolute;
       left: 5.5rem;
-      /* top: 0; */
       height: 2.5rem;
       width: 7.6rem;
       transform: translateY(-100%);
@@ -158,25 +161,26 @@ export const Profile = styled.div<SidebarProps>`
     display: flex;
     align-items: flex-start;
     flex-direction: column;
+    margin-left: 0.5rem;
 
-    /* transition: 0.4s ease; */
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: ${props => props.isActive ? "100%" : "0%"};
+    transition: width 0.4s ease;
 
-
-    strong {
-      font-size: 12px;
+    strong, span {
       opacity: ${props => props.isActive ? "1" : "0"};
       visibility: ${props => props.isActive ? "visible" : "hidden"};
       display: ${props => props.isActive ? "block" : "none"};
-      overflow: hidden;
-      white-space: nowrap;
-      text-overflow: ellipsis;
+    }
+
+    strong {
+      font-size: 12px;
     }
 
     span {
       font-size: 10px;
-      opacity: ${props => props.isActive ? "1" : "0"};
-      visibility: ${props => props.isActive ? "visible" : "hidden"};
-      display: ${props => props.isActive ? "block" : "none"};
     }
   }
 
