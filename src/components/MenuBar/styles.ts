@@ -5,7 +5,7 @@ interface SidebarProps {
 }
 
 export const Container = styled.div<SidebarProps>`
-  transition: 0.5s ease;
+  transition: all 0.5s ease;
 
   position: fixed;
   top: 0;
@@ -36,7 +36,7 @@ export const Logo = styled.div<SidebarProps>`
     display: ${props => props.isActive ? "flex" : "none"};
     align-items: center;
     justify-content: center;
-    transition: 0.1s ease;
+    /* transition: 0.1s ease; */
 
     opacity: ${props => props.isActive ? "1" : "0"};
     visibility: ${props => props.isActive ? "visible" : "hidden"};
@@ -58,9 +58,7 @@ export const Logo = styled.div<SidebarProps>`
     justify-content: center;
     height: 2rem;
     width: 2rem;
-
-    /* transform: ${props => props.isActive ? "none" : "translateX(-220%)"}; */
-    transition: 0.5s ease;
+    /* transition: 0.5s ease; */
     
     background: none;
     border: none;
@@ -96,8 +94,6 @@ export const PageList = styled.div<SidebarProps>`
       color: #FFF;
       border-radius: 0.75rem;
       text-decoration: none;
-
-      transition: 0.4s;
 
       &:hover {
         color: #11101D;
@@ -163,7 +159,7 @@ export const Profile = styled.div<SidebarProps>`
     align-items: flex-start;
     flex-direction: column;
 
-    transition: 0.4s;
+    /* transition: 0.4s ease; */
 
 
     strong {
